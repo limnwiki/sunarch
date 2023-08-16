@@ -33,7 +33,7 @@ DOTFILESREPO="https://github.com/limnwiki/dotfiles.git"
 COREPKGS="git gcc make libxft libxinerama ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf alacritty xwallpaper dmenu dunst picom sxhkd fish scrot sxiv mpv xclip xorg-xrandr"
 PKGS="newsboat neofetch bat keepassxc thunar gnome-characters deja-dup"
 AURPKGS="brave-bin ncspot"
-DEVPKGS="rsync asio ascii"
+DEVPKGS="rsync asio ascii boost"
 DEVAURPKGS="vscodium-bin"
 
 # Colors
