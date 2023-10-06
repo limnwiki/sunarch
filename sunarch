@@ -30,11 +30,11 @@ DOTFILESREPO="https://github.com/limnwiki/dotfiles.git"
 
 # Packages
 
-COREPKGS="git gcc make libxft libxinerama ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf alacritty xwallpaper dmenu dunst picom sxhkd fish scrot sxiv mpv xclip xorg-xrandr"
-PKGS="newsboat neofetch bat keepassxc thunar gnome-characters deja-dup"
-AURPKGS="brave-bin ncspot"
-DEVPKGS="rsync asio ascii boost"
-DEVAURPKGS="vscodium-bin"
+COREPKGS="git gcc make libxft libxinerama ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf alacritty xwallpaper dmenu dunst picom sxhkd fish tmux scrot sxiv mpv xclip xorg-xrandr"
+PKGS="newsboat neofetch ncspot zathura zathura-pdf-mupdf keepassxc pavucontrol thunar deja-dup"
+AURPKGS="brave-bin"
+DEVPKGS="rsync asio ascii boost clang go gopls lua-language-server bash-language-server vscode-html-languageserver"
+DEVAURPKGS=""
 
 # Colors
 
@@ -140,19 +140,6 @@ installdotfiles () {
     rm -rf dotfiles
 }
 
-installdoomemacs () {
-    installpkgs emacs ripgrep
-
-    guard rm -rf ~/.emacs.d # Remove default emacs config
-
-    echo "Installing doom... this may take a while..."
-
-    guard git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-    guard ~/.config/emacs/bin/doom install
-
-    mkdir org # For org files
-}
-
 installbluetooth () {
     installpkgs bluez blueman
     confirm "Are you using pulseaudio?" "installpkgs pulseaudio-bluetooth"
@@ -177,7 +164,6 @@ installcore () {
     confirm "Install extra packages?" installextras
     confirm "Install dev packages?" installdevpkgs
     confirm "Install extra AUR packages?" installextrasaur
-    confirm "Install doom emacs?" installdoomemacs
     confirm "Install bluetooth" installbluetooth
     confirm "Install dotfiles?" installdotfiles
 
