@@ -31,7 +31,7 @@ DOTFILESREPO="https://github.com/limnwiki/dotfiles.git"
 
 # Packages
 
-COREPKGS="git gcc make libxft libxinerama ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf bc alacritty neovim xwallpaper dmenu dunst picom sxhkd fish tmux scrot sxiv mpv xclip xorg-xrandr"
+COREPKGS="git gcc make libxft libxinerama ttf-liberation ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf bc alacritty neovim xwallpaper dmenu dunst picom sxhkd fish tmux scrot sxiv mpv xclip xorg-xrandr"
 PKGS="newsboat neofetch ncspot zathura zathura-pdf-mupdf keepassxc pavucontrol thunar deja-dup"
 AURPKGS="brave-bin"
 DEVPKGS="rsync asio ascii boost clang go gopls lua-language-server bash-language-server vscode-html-languageserver vscode-css-languageserver"
