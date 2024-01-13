@@ -14,7 +14,7 @@ INSTALLEDLY=false # Used for ly setup
 
 XINITRC='
 PATH=$PATH:~/.local/bin/
-xset r rate 300 40
+xset r rate 300 50
 picom --vsync &
 xwallpaper --zoom ~/.config/wall.png
 dwmblocks &
@@ -31,10 +31,11 @@ DOTFILESREPO="https://github.com/limnwiki/dotfiles.git"
 
 # Packages
 
-COREPKGS="git gcc make libxft libxinerama ttf-liberation ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf bc alacritty neovim xwallpaper dmenu dunst picom sxhkd fish tmux scrot sxiv mpv xclip xorg-xrandr"
+COREPKGS="git gcc make libxft libxinerama ttf-liberation ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf bc alacritty neovim qutebrowser xwallpaper dmenu dunst picom sxhkd fish tmux scrot sxiv mpv xclip xorg-xrandr"
 PKGS="newsboat neofetch ncspot zathura zathura-pdf-mupdf keepassxc pavucontrol thunar deja-dup"
-AURPKGS="brave-bin"
-DEVPKGS="rsync asio ascii boost clang go gopls lua-language-server bash-language-server vscode-html-languageserver vscode-css-languageserver"
+# AURPKGS="brave-bin"
+AURPKGS=""
+DEVPKGS="rsync asio ascii boost clang go gopls lua-language-server python-lsp-server bash-language-server vscode-html-languageserver vscode-css-languageserver"
 DEVAURPKGS=""
 
 # Colors
@@ -171,6 +172,12 @@ installcore () {
     confirm "Install extra AUR packages?" installextrasaur
     confirm "Install bluetooth" installbluetooth
     confirm "Install dotfiles?" installdotfiles
+
+    # Install Catppuccin Theme for Qutebrowser
+    git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/catppuccin
+
+    # Set Qutebrowser as Default Browser
+    xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
 
     # Setup directories
 
