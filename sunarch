@@ -31,7 +31,7 @@ DOTFILESREPO="https://github.com/limnwiki/dotfiles.git"
 
 # Packages
 
-COREPKGS="git gcc make libxft libxinerama ttf-liberation ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf bc alacritty neovim qutebrowser xwallpaper dmenu dunst picom sxhkd fish tmux scrot sxiv mpv xclip xorg-xrandr"
+COREPKGS="git gcc make libxft libxinerama ttf-liberation ttf-sourcecodepro-nerd noto-fonts-emoji man htop fzf lf bc alacritty neovim qutebrowser python-adblock xwallpaper dmenu dunst picom sxhkd fish tmux scrot sxiv mpv xclip xorg-xrandr"
 PKGS="newsboat neofetch ncspot zathura zathura-pdf-mupdf keepassxc pavucontrol thunar deja-dup"
 # AURPKGS="brave-bin"
 AURPKGS=""
@@ -172,9 +172,6 @@ installcore () {
     confirm "Install extra AUR packages?" installextrasaur
     confirm "Install bluetooth" installbluetooth
     confirm "Install dotfiles?" installdotfiles
-
-    # Install Catppuccin Theme for Qutebrowser
-    git clone https://github.com/catppuccin/qutebrowser.git ~/.config/qutebrowser/catppuccin
 
     # Set Qutebrowser as Default Browser
     xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
